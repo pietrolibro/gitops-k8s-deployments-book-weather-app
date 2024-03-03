@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-city-weather-app
+  labels:
+    app: my-city-weather-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: my-city-weather-app
+  template:
+    metadata:
+      labels:
+        app: my-city-weather-app
+    spec:
+      containers:
+      - name: my-city-weather-app
+        image: pietrolibro/my-city-weather-app:1.0
+        ports:
+        - containerPort: 8080
+        resources:
+          limits:
+            cpu: "1"
+            memory: "512Mi"
