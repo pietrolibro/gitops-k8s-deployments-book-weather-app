@@ -2,6 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: my-city-weather-app
+  namespace: gitops-kubernetes
   labels:
     app: my-city-weather-app
 spec:
