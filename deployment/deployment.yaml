@@ -2,10 +2,11 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: my-city-weather-app
+  namespace: gitops-kubernetes
   labels:
     app: my-city-weather-app
 spec:
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
       app: my-city-weather-app
@@ -16,7 +17,7 @@ spec:
     spec:
       containers:
       - name: my-city-weather-app
-        image: pietrolibro/my-city-weather-app:1.0
+        image: pietrolibro/gitops-k8s-deployments:main
         ports:
         - containerPort: 8080
         resources:
