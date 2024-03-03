@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: my-city-weather-app
-        image: pietrolibro/my-city-weather-app:latest
+        image: pietrolibro/gitops-k8s-deployments:main
         ports:
         - containerPort: 8080
         resources:
